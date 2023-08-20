@@ -8,6 +8,11 @@ function calculateTriangleArea(){
     const heightFieldTextString = heightField.value;
     const heightFieldText = parseFloat(heightFieldTextString);
 //     console.log(heightFieldText);
+
+if(isNaN(width)){
+    alert('please insert a number');
+    return;
+}
     const area = 0.5 * baseFieldText * heightFieldText;
     console.log(area);
 
@@ -24,6 +29,11 @@ function calculateRectangleArea(){
     const largeField = document.getElementById('rectangle-large');
     const largeFieldTextString = largeField.value;
     const largeFieldText = parseFloat(largeFieldTextString);
+
+    if(isNaN(width)){
+        alert('please insert a number');
+        return;
+    }
 
     const areaCalculate = widthFieldText * largeFieldText;
     console.log(areaCalculate);
@@ -59,6 +69,12 @@ function setElementInnerText(elementId , parallelogramTotal, ellipseTotal){
 function calculateParallelogramArea(){
     const base = inputValueId('parallelogram-base');
     const height = inputValueId('parallelogram-height');
+
+    if(isNaN(width)){
+        alert('please insert a number');
+        return;
+    }
+
     const parallelogramTotal = base * height;
     // console.log(parallelogramTotal);
     setElementInnerText('area-parallelogram', parallelogramTotal );
@@ -68,6 +84,12 @@ function calculateParallelogramArea(){
 function calculateEllipseArea(){
     const ellipseLarge =inputValueId('ellipse-a');
     const ellipseShort = inputValueId('ellipse-b');
+
+    if(isNaN(width)){
+        alert('please insert a number');
+        return;
+    }
+
     const ellipseTotal = 3.14 * ellipseLarge * ellipseShort;
     setElementInnerText('area-ellipse', ellipseTotal);
 }
